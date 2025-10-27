@@ -2,7 +2,7 @@
 // Gets three exam scores from the user and shows them 
 // their letter grades
 // Started by: Caitlin Snyder
-// Edited by: [NAME HERE]
+// Edited by: [eyad naeem]
 
 #include <iostream>
 using namespace std;
@@ -15,7 +15,16 @@ using namespace std;
  *  Return Value: A double representing a valid test score (0–100)
  ****************************************************************/
 
-// [TO DO: ADD getScore function HERE]
+double getScore() {// returns a double
+    double score;
+    cout << "enter a test score" << endl;// asks the user to enter there test scores
+    cin >> score;
+    while (score < 0 || score>100) {// only allows values between 0-100
+        cout << "invalid, enter new score" << endl;
+            cin >> score;
+    }
+    return score;// returns the score value they enter 
+}
     // Ask the user for a score and validate input.
     // Keep asking until the score is between 0 and 100.
     // Return the valid score.
@@ -32,7 +41,23 @@ using namespace std;
  * Return Value: None (displays the letter grade to the screen)
  ****************************************************************/
 
-// [TO DO : ADD getScore function HERE]
+ void displayLetterGrade(double score){// dosnt return anything
+     if (score >= 90) {
+         cout << "your letter grade is A" << endl;//if your grade is between 90-100 A
+     }
+     else if (score < 90 && score >= 80) {
+         cout << "your letter grade is B" << endl;//if your grade is between 80-89 B
+     }
+     else if (score < 80 && score >= 70) {
+         cout << "your letter grade is C" << endl;//if your grade is between 70-79 C
+     }
+     else if (score < 70 && score >= 60) {
+         cout << "your letter grade is D" << endl;//if your grade is between 60-69 D
+         }
+     else {
+         cout << "your letter grade is F" << endl;// anything bellow 60 if F
+     }
+ }
     // Determine the letter grade and display it.
     // Example grading scale:
     // 90–100: A
